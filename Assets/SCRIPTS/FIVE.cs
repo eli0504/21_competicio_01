@@ -65,13 +65,13 @@ public class FIVE : MonoBehaviour
     {
         while (!isGameOver)
         {
-            yield return new WaitForSeconds(Random.Range(1f,2,5f));
+            yield return new WaitForSeconds(Random.Range(1f, 2.5f));
 
             _material.color = Color.blue; //reseteamos el color a nes principi
 
             if(hasBeenClicked == false)
             {
-                _audioSource.PlayOneShot(soundLoose,1); //si no cliques fa renou de perdre
+                _audiosource.PlayOneShot(soundLoose,1); //si no cliques fa renou de perdre
                 
                 if (--lives == 0) //si tras restar una vida, no men queden, gameover
                 {
