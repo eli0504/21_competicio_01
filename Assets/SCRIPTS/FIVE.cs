@@ -87,6 +87,8 @@ public class FIVE : MonoBehaviour
                     //aturar es temps
                     isGameOver = true;
 
+                    restartGamePanel.SetActive(true); //quan mors surt es botó amb es panel
+
                     //posam es brake perquè no se segueixi executant ses línees des materix ambit de visibilitat
                     break;
                 }
