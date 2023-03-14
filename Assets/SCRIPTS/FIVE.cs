@@ -42,10 +42,11 @@ public class FIVE : MonoBehaviour
     }
     void Start()
     {
-        points = 0; //reiniciar puntuaciÛ
+        points = 0; //reiniciar puntuaci√≥
         hasBeenClicked = false; //reset clik
         lives = 3;
         SetText();
+        //posar aqu√≠ que comen√ßi sa musica
 
         StartCoroutine(GenerateNextRandomPos());
     }
@@ -63,7 +64,7 @@ public class FIVE : MonoBehaviour
     {
         while (!isGameOver)
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(Random.Range(1f,2,5f));
 
             _material.color = Color.blue; //reseteamos el color a nes principi
 
@@ -76,7 +77,7 @@ public class FIVE : MonoBehaviour
                     //aturar es temps
                     isGameOver = true;
 
-                    //posam es brake perquË no se segueixi executant ses lÌnees des materix ambit de visibilitat
+                    //posam es brake perqu√® no se segueixi executant ses l√≠nees des materix ambit de visibilitat
                     break;
                 }
             }
@@ -107,6 +108,8 @@ public class FIVE : MonoBehaviour
     public void SetText()
     {
         livesText.text = $"LIVES: {lives}";
-        //update text points
+        pointsText.text = $"POINTS: {points}"; //update text points
     }
+
+    
 }
