@@ -34,6 +34,9 @@ public class FIVE : MonoBehaviour
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI pointsText;
 
+    //panel
+    public GameObject restartGamePanel;
+
 
     private void Awake()
     {
@@ -50,6 +53,9 @@ public class FIVE : MonoBehaviour
         //posar aquí que començi sa musica
 
         StartCoroutine(GenerateNextRandomPos());
+
+        restartGamePanel.SetActive(true); //panel de pantalla restart
+
     }
     
      private Vector3 GenerateRandomPos()
@@ -89,6 +95,9 @@ public class FIVE : MonoBehaviour
             transform.position = GenerateRandomPos();
 
             hasBeenClicked = false; //reset que hagui pitjat o no 
+
+            restartGamePanel.SetActive(false); //quan no morim no surt es panel
+
         }
       
     }
