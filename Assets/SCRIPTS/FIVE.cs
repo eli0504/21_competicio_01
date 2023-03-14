@@ -24,7 +24,8 @@ public class FIVE : MonoBehaviour
 
     //audio
     public AudioSource _audiosource;
-    public AudioClip sound;
+    public AudioClip soundClick;
+    public AudioClip soundLoose;
 
     //lives
     public int lives = 3;
@@ -70,10 +71,13 @@ public class FIVE : MonoBehaviour
 
             if(hasBeenClicked == false)
             {
+                _audioSource.PlayOneShot(soundLoose,1); //si no cliques fa renou de perdre
+                
                 if (--lives == 0) //si tras restar una vida, no men queden, gameover
                 {
                     SetText();
-
+                    
+                    
                     //aturar es temps
                     isGameOver = true;
 
@@ -99,7 +103,7 @@ public class FIVE : MonoBehaviour
             //update points
 
             hasBeenClicked = true; //ja no se pot pitjar +
-            _audiosource.PlayOneShot(sound,1); //sona "sound" un pic a volum 1
+            _audiosource.PlayOneShot(soundClick,1); //sona "sound" un pic a volum 1
         } 
         //fer un renou(AudioClip.play) {declarar audioclip i audiosource a s'awake}
     }
